@@ -1,15 +1,14 @@
 ﻿using Bolo.Application.Interfaces;
 using Bolo.Infrastructure.Auth.DbContext;
-using Bolo.Infrastructure.Auth.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Bolo.Infrastructure.Auth
+namespace Bolo.Infrastructure.Auth.Services
 {
-    public static class ServiceRegistration
+    public static class ServiceRegistrationAuthenticate
     {
         public static void AddIdentityDbContext(this IServiceCollection services, IConfiguration configuration)
         {

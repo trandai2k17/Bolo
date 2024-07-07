@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bolo.Domain.Entities
+namespace Bolo.Application.Interfaces
 {
     public interface IDapperHelper
     {

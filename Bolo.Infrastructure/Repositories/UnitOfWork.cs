@@ -16,6 +16,8 @@ namespace Bolo.Infrastructure.Repositories
             _helper = helper;
         }
         private bool disposedValue;
+        IProductionLine _ProductionLine;
+        public IProductionLine ProductionLineRepo { get { return _ProductionLine ??= new ProductionLineRepository(_helper); } }
 
         //IEmployeeRepository _employeeRepository;
         //IAccountRepository _AccountRepo;

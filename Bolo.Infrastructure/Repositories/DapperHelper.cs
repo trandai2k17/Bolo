@@ -1,13 +1,8 @@
-﻿using Bolo.Domain.Entities;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
+﻿using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dapper;
+using Bolo.Application.Interfaces;
 
 namespace Bolo.Infrastructure.Repositories
 {

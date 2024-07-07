@@ -10,6 +10,7 @@ namespace Bolo.Application.Interfaces
     {
         //IAccountRepository AccountRepo { get; }
         //IEmployeeRepository EmployeeRepository { get; }
+        IProductionLine ProductionLineRepo { get; }
         void Dispose();
     }
 }
