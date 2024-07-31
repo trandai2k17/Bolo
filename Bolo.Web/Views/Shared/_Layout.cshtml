@@ -584,8 +584,8 @@
                     <div class="">
                         <nav>
                             <ol class="breadcrumb mb-1 mb-md-0">
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">@ViewData["Title"]</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">@ViewData["Page"]</li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">@ViewData["Page"]</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">@ViewData["View"]</li>
                             </ol>
                         </nav>
                     </div>
@@ -1360,42 +1360,48 @@
         <i class="ri-arrow-up-s-fill fs-20"></i>
     </div>
     <div id="responsive-overlay"></div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="~/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/libs/jqueryui/jquery-ui.min.js"></script>
+
     <!-- Scroll To Top -->
     <!-- Popper JS -->
     <script src="@Url.Content("../assets/libs/@popperjs/core/umd/popper.min.js")"></script>
 
-    <!-- Bootstrap JS -->
-    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Defaultmenu JS -->
-    <script src="../assets/js/defaultmenu.min.js"></script>
+    <script src="~/assets/js/defaultmenu.min.js"></script>
 
     <!-- Node Waves JS-->
-    <script src="../assets/libs/node-waves/waves.min.js"></script>
+    <script src="~/assets/libs/node-waves/waves.min.js"></script>
 
     <!-- Sticky JS -->
-    <script src="../assets/js/sticky.js"></script>
+    <script src="~/assets/js/sticky.js"></script>
 
     <!-- Simplebar JS -->
-    <script src="../assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="../assets/js/simplebar.js"></script>
+    <script src="~/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="~/assets/js/simplebar.js"></script>
 
     <!-- Color Picker JS -->
     <script src="@Url.Content("../assets/libs/@simonwep/pickr/pickr.es5.min.js")"></script>
 
     <!-- Date & Time Picker JS -->
-    <script src="../assets/libs/flatpickr/flatpickr.min.js"></script>
-    <script src="../assets/js/date-range.js"></script>
+    <script src="~/assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="~/assets/js/date-range.js"></script>
 
     <!-- Apex Charts JS -->
 @*     <script src="../assets/libs/apexcharts/apexcharts.min.js"></script>
     <script src="../assets/js/index.js"></script> *@
 
     <!-- Custom-Switcher JS -->
-    <script src="../assets/js/custom-switcher.min.js"></script>
+    <script src="~/assets/js/custom-switcher.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="../assets/js/custom.js"></script>
+    @* <script src="../assets/js/custom.js"></script> *@
+
+    <!-- Treeview JS -->
+    <script src="~/assets/libs/js-treeview/treeview.min.js"></script>
+    @* <script src="../assets/js/treeview.js"></script> *@
 
     <style>
         /* CSS for dropdown-element hover effect */

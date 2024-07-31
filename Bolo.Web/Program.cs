@@ -13,10 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
-builder.Services.AddInfrastructure(); 
 builder.Services.AddInfrastructureIdentity();
 builder.Services.AddIdentityDbContext(builder.Configuration);
 builder.Services.AddIdentityAuth();
+
+builder.Services.AddInfrastructure(builder.Configuration); 
 
 var app = builder.Build();
 
@@ -35,8 +36,17 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+//app.MapAreaControllerRoute(
+//        name: "Identity",
+//        areaName: "Identity",
+//        pattern: "Identity/{controller=Account}/{action=Login}"
+//    );
+
+app.MapControllerRoute(
+            name: "areas",
+            pattern: "{area:exists}/{controller}/{action}");
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 app.Run();

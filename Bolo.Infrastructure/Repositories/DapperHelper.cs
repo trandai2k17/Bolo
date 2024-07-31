@@ -11,69 +11,140 @@ namespace Bolo.Infrastructure.Repositories
         private readonly string _connectStr = string.Empty;
         private readonly string _connectAW2019Str = string.Empty;
 
-        public DapperHelper(IConfiguration configuration)
+        private IDbConnection _connection1;
+        private IDbConnection _connection2;
+        private IDbTransaction _transaction1;
+        private IDbTransaction _transaction2;
+
+        public DapperHelper(IDbConnection connection1, IDbConnection connection2)
         {
-            _connectStr = configuration.GetConnectionString("MyDB1021Conn");
-            _connectAW2019Str = configuration.GetConnectionString("AW2019Conn");
+            _connection1 = connection1;
+            _connection2 = connection2;
         }
 
-        public void ExecuteNoReturn(string query, DynamicParameters? parameters = null, CommandType commandTypes = CommandType.Text)
+        public void SetTransaction(IDbTransaction transaction1, IDbTransaction transaction2)
         {
-            using (var dbConnection = new SqlConnection(_connectStr))
-            {
-                dbConnection.Execute(query, parameters, commandType: commandTypes);
-            }
+            _transaction1 = transaction1;
+            _transaction2 = transaction2;
         }
-        public async Task ExecuteNoReturnAsync(string query, DynamicParameters? parameters = null, CommandType commandTypes = CommandType.Text)
+
+        public void Commit()
         {
-            using (var dbConnection = new SqlConnection(_connectStr))
+            _transaction1?.Commit();
+            _transaction2?.Commit();
+        }
+
+        public void Rollback()
+        {
+            _transaction1?.Rollback();
+            _transaction2?.Rollback();
+        }
+
+        public async Task<IEnumerable<T>> QueryAsync<T>(string query, DynamicParameters? param = null, IDbConnection? connection = null)
+        {
+            using (var conn = connection ?? _connection1)
             {
-                await dbConnection.ExecuteAsync(query, parameters, commandType: commandTypes);
+                return await conn.QueryAsync<T>(query, param, _transaction1);
             }
         }
 
-        public async Task<IEnumerable<T>> ExecuteQueryIEnumerableAsync<T>(string query, DynamicParameters? parameters = null, CommandType commandType = CommandType.Text)
+        public async Task<T> QuerySingleAsync<T>(string query, DynamicParameters? param = null, IDbConnection? connection = null)
         {
-            using (var dbConnection = new SqlConnection(_connectStr))
+            using (var conn = connection ?? _connection1)
             {
-                return await dbConnection.QueryAsync<T>(query, parameters, commandType: commandType);
+                return await conn.QuerySingleAsync<T>(query, param, _transaction1);
             }
         }
 
-        public async Task<List<T>> ExecuteQueryListAsync<T>(string query, DynamicParameters? parameters = null, CommandType commandType = CommandType.Text)
+        public async Task<int> ExecuteAsync(string query, DynamicParameters? param = null, IDbConnection? connection = null)
         {
-            using (var dbConnection = new SqlConnection(_connectStr))
+            using (var conn = connection ?? _connection1)
             {
-                return (List<T>)await dbConnection.QueryAsync<T>(query, parameters, commandType: commandType);
+                return await conn.ExecuteAsync(query, param, _transaction1);
             }
         }
 
-        public async Task<T> ExecuteQueryFirstAsync<T>(string query, DynamicParameters? parameters = null, CommandType commandType = CommandType.Text)
+        public async Task<IEnumerable<T>> QueryStoreAsync<T>(string query, DynamicParameters? param = null, IDbConnection? connection = null)
         {
-            using (var dbConnection = new SqlConnection(_connectStr))
+            using (var conn = connection ?? _connection1)
             {
-                var result = await dbConnection.QueryFirstOrDefaultAsync<T>(query, parameters, commandType: commandType);
-                return result;
+                return await conn.QueryAsync<T>(query, param, _transaction1, commandType:CommandType.StoredProcedure);
             }
         }
-        public T ExecuteQueryFirst<T>(string query, DynamicParameters? parameters = null, CommandType commandType = CommandType.Text)
+
+        public async Task<T> QuerySingleStoreAsync<T>(string query, DynamicParameters? param = null, IDbConnection? connection = null)
         {
-            using (var dbConnection = new SqlConnection(_connectStr))
+            using (var conn = connection ?? _connection1)
             {
-                return dbConnection.QueryFirstOrDefault<T>(query, parameters, commandType: commandType);
+                return await conn.QuerySingleAsync<T>(query, param, _transaction1, commandType: CommandType.StoredProcedure);
             }
         }
-        public async Task<T> ExecuteScalarAsync<T>(string query, DynamicParameters? parameters = null, CommandType commandTypes = CommandType.Text)
+
+        public async Task<int> ExecuteStoreAsync(string query, DynamicParameters? param = null, IDbConnection? connection = null)
         {
-            using (var dbConnection = new SqlConnection(_connectStr))
+            using (var conn = connection ?? _connection1)
             {
-                var result = await dbConnection.ExecuteScalarAsync(query, parameters, commandType: commandTypes);
-                if (Convert.IsDBNull(result) || result == null)
-                {
-                    return default(T);
-                }
-                return (T)Convert.ChangeType(result, typeof(T));
+                return await conn.ExecuteAsync(query, param, _transaction1, commandType: CommandType.StoredProcedure);
             }
         }
+
+        //public void ExecuteNoReturn(string query, DynamicParameters? parameters = null, CommandType commandTypes = CommandType.Text)
+        //{
+        //    using (var dbConnection = new SqlConnection(_connectStr))
+        //    {
+        //        dbConnection.Execute(query, parameters, commandType: commandTypes);
+        //    }
+        //}
+        //public async Task ExecuteNoReturnAsync(string query, DynamicParameters? parameters = null, CommandType commandTypes = CommandType.Text)
+        //{
+        //    using (var dbConnection = new SqlConnection(_connectStr))
+        //    {
+        //        await dbConnection.ExecuteAsync(query, parameters, commandType: commandTypes);
+        //    }
+        //}
+
+        //public async Task<IEnumerable<T>> ExecuteQueryIEnumerableAsync<T>(string query, DynamicParameters? parameters = null, CommandType commandType = CommandType.Text)
+        //{
+        //    using (var dbConnection = new SqlConnection(_connectStr))
+        //    {
+        //        return await dbConnection.QueryAsync<T>(query, parameters, commandType: commandType);
+        //    }
+        //}
+
+        //public async Task<List<T>> ExecuteQueryListAsync<T>(string query, DynamicParameters? parameters = null, CommandType commandType = CommandType.Text)
+        //{
+        //    using (var dbConnection = new SqlConnection(_connectStr))
+        //    {
+        //        return (List<T>)await dbConnection.QueryAsync<T>(query, parameters, commandType: commandType);
+        //    }
+        //}
+
+        //public async Task<T> ExecuteQueryFirstAsync<T>(string query, DynamicParameters? parameters = null, CommandType commandType = CommandType.Text)
+        //{
+        //    using (var dbConnection = new SqlConnection(_connectStr))
+        //    {
+        //        var result = await dbConnection.QueryFirstOrDefaultAsync<T>(query, parameters, commandType: commandType);
+        //        return result;
+        //    }
+        //}
+        //public T ExecuteQueryFirst<T>(string query, DynamicParameters? parameters = null, CommandType commandType = CommandType.Text)
+        //{
+        //    using (var dbConnection = new SqlConnection(_connectStr))
+        //    {
+        //        return dbConnection.QueryFirstOrDefault<T>(query, parameters, commandType: commandType);
+        //    }
+        //}
+        //public async Task<T> ExecuteScalarAsync<T>(string query, DynamicParameters? parameters = null, CommandType commandTypes = CommandType.Text)
+        //{
+        //    using (var dbConnection = new SqlConnection(_connectStr))
+        //    {
+        //        var result = await dbConnection.ExecuteScalarAsync(query, parameters, commandType: commandTypes);
+        //        if (Convert.IsDBNull(result) || result == null)
+        //        {
+        //            return default(T);
+        //        }
+        //        return (T)Convert.ChangeType(result, typeof(T));
+        //    }
+        //}
     }
 }

@@ -11,14 +11,14 @@ namespace Bolo.Web.Controllers
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> ProdLineList()
         {
             var model = new ProdLineVM()
             {
                 ProdLines = await _unitOfWork.ProductionLineRepo.LocationsAsync()
             };
 
-            return View(model);
+            return View(nameof(ProdLineList), model);
         }
     }
 }
