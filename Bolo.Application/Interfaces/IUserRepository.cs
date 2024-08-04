@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Bolo.Application.Interfaces
 {
-    public interface IProductionLine
+    public interface IUserRepository
     {
-        Task<IEnumerable<ProductionLine>> LocationsAsync();
+        Task<IEnumerable<ErpUser>> AccountsAsync();
     }
 }

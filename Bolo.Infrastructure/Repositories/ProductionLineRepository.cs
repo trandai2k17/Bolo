@@ -17,11 +17,11 @@ namespace Bolo.Infrastructure.Repositories
             _dapper = dapper;
         }
 
-        public async Task<List<ProductionLine>> LocationsAsync()
+        public async Task<IEnumerable<ProductionLine>> LocationsAsync()
         {
             string query = @"SELECT ProductionGroup, ProductionLine ProductionLineName, Location, LocationLine FROM FAC_Location ";
             query += " ORDER BY ProductionGroup, ProductionLine, Location";
-            return await _dapper.ExecuteQueryListAsync<ProductionLine>(query, null, CommandType.Text);
+            return await _dapper.QueryAsync<ProductionLine>(query, null, null);
         }
 
     }

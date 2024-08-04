@@ -18,11 +18,36 @@ namespace Bolo.Infrastructure.Repositories
             _dapperHelper = dapperHelper;
         }
 
-        //public async Task<IEnumerable<Employee>> GetAllAsync()
-        //{
-        //    string sql = "SELECT * FROM MyTable";
-        //    return await _dapperHelper.QueryAsync<Employee>(sql, null, connection);
-        //}
+        public async Task<IEnumerable<Employee>> GetAllAsync()
+        {
+            string sql = "SELECT * FROM MyTable";
+            return await _dapperHelper.QueryAsync<Employee>(sql, null);
+        }
+
+        public async Task<Employee> GetBusinessDataAsync()
+        {
+            _dapperHelper.BeginTransaction();
+
+            try
+            {
+                // Execute operations on the first database
+                var data1 = await _dapperHelper.QueryAsync<Employee>("SELECT * FROM Table1");
+
+                // Execute operations on the second database
+                var data2 = await _dapperHelper.QueryAsync<Employee>("SELECT * FROM Table2");
+
+                _dapperHelper.Commit();
+                var obj = data1.Concat(data2);
+                // Combine data from both databases
+                return new Employee();
+            }
+            catch (Exception)
+            {
+                _dapperHelper.Rollback();
+                throw;
+            }
+        }
+
 
         //public async Task<Employee> GetByIdAsync(int id,)
         //{

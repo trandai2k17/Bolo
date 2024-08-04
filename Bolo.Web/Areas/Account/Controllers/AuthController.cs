@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bolo.Web.Areas.Auth.Controllers
 {
-    [Area("Auth")]
+    [Area("Account")]
     public class AuthController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -17,11 +17,11 @@ namespace Bolo.Web.Areas.Auth.Controllers
         }
         public IActionResult Register()
         {
-            Account model = new Account();
+            ErpUser model = new ErpUser();
             return View(nameof(Register), model);
         }
         [HttpPost]
-        public async Task<IActionResult> Register(Account account)
+        public async Task<IActionResult> Register(ErpUser account)
         {
             if (ModelState.IsValid)
             {
@@ -33,19 +33,19 @@ namespace Bolo.Web.Areas.Auth.Controllers
                 }
 
             }
-            Account model = new Account();
+            ErpUser model = new ErpUser();
             return View(nameof(Register), account);
         }
         public IActionResult Login(string ReturnUrl = null)
         {
-            Account model = new Account()
+            ErpUser model = new ErpUser()
             {
                 ReturnUrl = ReturnUrl ?? "~"
             };
             return View(nameof(Login), model);
         }
         [HttpPost]
-        public async Task<IActionResult> Login(Account model, string ReturnUrl)
+        public async Task<IActionResult> Login(ErpUser model, string ReturnUrl)
         {
             var result = await _authService.SignInAsync(model);
             if (result)
@@ -81,7 +81,7 @@ namespace Bolo.Web.Areas.Auth.Controllers
 
         public async Task<IActionResult> CreateAccount(Employee EmplID)
         {
-            Account account = new Account();
+            ErpUser account = new ErpUser();
             return View(nameof(Register), account);
         }
     }

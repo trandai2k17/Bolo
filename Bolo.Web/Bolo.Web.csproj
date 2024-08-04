@@ -20,6 +20,17 @@
 	  </PackageReference>
   </ItemGroup>
 
+	<ItemGroup>
+		<Content Update="Areas\Account\Views\_ViewImports.cshtml">
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+		<Content Update="Areas\Account\Views\_ViewStart.cshtml">
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+	</ItemGroup>
+	
   <ItemGroup>
     <ProjectReference Include="..\Bolo.Application\Bolo.Application.csproj" />
     <ProjectReference Include="..\Bolo.Infrastructure.Auth\Bolo.Infrastructure.Auth.csproj" />

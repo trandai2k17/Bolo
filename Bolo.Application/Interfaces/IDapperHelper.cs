@@ -10,9 +10,10 @@ namespace Bolo.Application.Interfaces
 {
     public interface IDapperHelper
     {
-        void SetTransaction(IDbTransaction transaction1, IDbTransaction transaction2);
+        void BeginTransaction();
         void Commit();
         void Rollback();
+        void Dispose();
 
         Task<IEnumerable<T>> QueryAsync<T>(string query, DynamicParameters? param = null, IDbConnection? connection = null);
         Task<T> QuerySingleAsync<T>(string query, DynamicParameters? param = null, IDbConnection? connection = null);
@@ -20,7 +21,7 @@ namespace Bolo.Application.Interfaces
         Task<IEnumerable<T>> QueryStoreAsync<T>(string query, DynamicParameters? param = null, IDbConnection? connection = null);
         Task<T> QuerySingleStoreAsync<T>(string query, DynamicParameters? param = null, IDbConnection? connection = null);
         Task<int> ExecuteStoreAsync(string query, DynamicParameters? param = null, IDbConnection? connection = null);
-
+  
         //void ExecuteNoReturn(string query, DynamicParameters? parameters = null, CommandType commandTypes = CommandType.Text);
         //Task ExecuteNoReturnAsync(string query, DynamicParameters? parameters = null, CommandType commandTypes = CommandType.Text);
         ////Task<T> ExecuteQueryFirst<T>(string query, DynamicParameters? parameters = null, CommandType commandType = CommandType.Text);

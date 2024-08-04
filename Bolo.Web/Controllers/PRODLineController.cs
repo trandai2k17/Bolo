@@ -13,12 +13,12 @@ namespace Bolo.Web.Controllers
         }
         public async Task<IActionResult> ProdLineList()
         {
-            var model = new ProdLineVM()
-            {
-                ProdLines = await _unitOfWork.ProductionLineRepo.LocationsAsync()
-            };
+            //var model = new ProdLineVM()
+            //{
+            //    ProdLines = await _unitOfWork.ProductionLineRepo.LocationsAsync()
+            //};
 
-            return View(nameof(ProdLineList), model);
+            return View(nameof(ProdLineList));
         }
     }
 }

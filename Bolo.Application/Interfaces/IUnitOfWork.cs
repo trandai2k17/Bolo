@@ -11,7 +11,7 @@ namespace Bolo.Application.Interfaces
         //IAccountRepository AccountRepo { get; }
         //IEmployeeRepository EmployeeRepository { get; }
         //IProductionLine ProductionLineRepo { get; }
-        //IEmployeeRepository EmployeeRepository { get; }
+        IUserRepository userRepository{ get; }
         void BeginTransaction();
         void Commit();
         void Rollback();

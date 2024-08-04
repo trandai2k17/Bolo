@@ -1,0 +1,63 @@
+﻿@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    @if (SignInManager.IsSignedIn(User))
+    {
+        var userInfo = await UserManager.GetUserAsync(User);
+        ViewBag.CurrentUser = userInfo;
+    }
+
+}
+<section>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <a class=" dropdown-toggle leading-none header-link d-flex justify-content-center"
+               id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+               aria-expanded="false">
+                <img src="../assets/images/faces/9.png" alt="img" width="32" height="32"
+                     class="rounded-circle">
+            </a>
+            <div class="main-header-dropdown dropdown-menu dropdown-menu-end overflow-hidden profile-dropdown"
+                 data-popper-placement="none">
+                <div class="main-header-profile bg-primary border-bottom p-3">
+                    <div class="d-flex wd-100p">
+                        <div class="main-img-user">
+                            <img alt="" src="../assets/images/faces/9.png" class="avatar avatar-md">
+                        </div>
+                        <div class="ms-2 my-auto text-white">
+                            <h6 class="mb-0 text-fixed-white">@User.Identity?.Name</h6>
+                            <span class=" text-fixed-white op-7 fs-13">@ViewBag.CurrentUser.EmplName</span>
+                        </div>
+                    </div>
+                </div>
+            @*< a class="dropdown-item d-flex" href="profile.html">
+                    <i class="bx bx-user-circle fs-18  me-2"></i>Profile
+                </a>
+                <a class="dropdown-item d-flex" href="editprofile.html">
+                    <i class="bx bx-cog  fs-18  me-2"></i> Edit Profile
+                </a>
+                <a class="dropdown-item d-flex" href="email.html">
+                    <i class="bx bxs-inbox  fs-18  me-2"></i>Inbox
+                </a>
+                <a class="dropdown-item d-flex" href="chat.html">
+                    <i class="bx bx-envelope  fs-18  me-2"></i>Messages
+                </a>
+                <a class="dropdown-item d-flex" href="settings.html">
+                    <i class="bx bx-slider-alt  fs-18  me-2"></i> Account Settings
+                </a> *@
+                <a class="dropdown-item d-flex" asp-area="Account" asp-action="Logout" asp-controller="Auth">
+                    <i class="bx bx-log-out  fs-18  me-2"></i>Sign Out
+                </a>
+            </div>
+        }
+        else
+        {
+            <a asp-area="Account" asp-action="Login" asp-controller="Auth"
+               class=" dropdown-toggle leading-none header-link d-flex justify-content-center">
+                <img src="../assets/images/faces/9.png" alt="img" width="32" height="32"
+                     class="rounded-circle">
+                
+            </a>
+        }
+</section>

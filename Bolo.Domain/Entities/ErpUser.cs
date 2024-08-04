@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bolo.Domain.Entities
 {
-    public class Account
+    public class ErpUser
     {
         public string ReturnUrl { get; set; }
         public string UserName { get; set; }
@@ -23,5 +23,8 @@ namespace Bolo.Domain.Entities
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
         public bool RememberMe { get; set; } = false;
+        public string? NormalizedUserName { get; set; }
+        public bool Active { get; set; } = true;
+
     }
 }

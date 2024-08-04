@@ -5,10 +5,10 @@ namespace Bolo.Application.Interfaces
     public interface IAuthService
     {
         Task<bool> AddRoleAsync(string roleName);
-        Task<Employee> FindByNameAsync(Account account);
-        Task<bool> RegisterAsync(Account account);
+        Task<Employee> FindByNameAsync(ErpUser account);
+        Task<bool> RegisterAsync(ErpUser account);
         Task<List<IdentityRole>> Roles();
-        Task<bool> SignInAsync(Account account);
+        Task<bool> SignInAsync(ErpUser account);
         Task SignOutAsync();
         Task<bool> DeleteRoleAsync(string id);
         Task<bool> UpdateRoleAsync(IdentityRole role);

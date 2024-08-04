@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light"
-      data-menu-styles="light" data-toggled="menu-hover-close" data-nav-style="menu-click">
+      data-menu-styles="light"  data-nav-style="menu-click">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,37 +8,38 @@
     @*     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Bolo.Web.styles.css" asp-append-version="true" /> *@
-
-    <!-- Choices JS -->
-    <script src="../assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <!-- Main Theme Js -->
+    <script src="~/assets/js/main.js"></script>
+@*     <!-- Choices JS -->
+    <script src="~/assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
 
     <!-- Main Theme Js -->
-    <script src="../assets/js/main.js"></script>
+    <script src="~/assets/js/main.js"></script> *@
 
     <!-- Bootstrap Css -->
-    <link id="style" href="../assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link id="style" href="~/assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Style Css -->
-    <link href="../assets/css/styles.min.css" rel="stylesheet">
+    <link href="~/assets/css/styles.min.css" rel="stylesheet">
 
     <!-- Icons Css -->
-    <link href="../assets/css/icons.css" rel="stylesheet">
+    <link href="~/assets/css/icons.css" rel="stylesheet">
 
     <!-- Node Waves Css -->
-    <link href="../assets/libs/node-waves/waves.min.css" rel="stylesheet">
+    <link href="~/assets/libs/node-waves/waves.min.css" rel="stylesheet">
 
     <!-- Simplebar Css -->
-    <link href="../assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+    <link href="~/assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
 
     <!-- Color Picker Css -->
-    <link rel="stylesheet" href="../assets/libs/flatpickr/flatpickr.min.css">
-    <link rel="stylesheet" href="@Url.Content("../assets/libs/@simonwep/pickr/themes/nano.min.css")">
+    <link rel="stylesheet" href="~/assets/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/assets/libs/@simonwep/pickr/themes/nano.min.css")">
 
     <!-- Choices Css -->
-    <link rel="stylesheet" href="../assets/libs/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="~/assets/libs/choices.js/public/assets/styles/choices.min.css">
 
 
-    <link rel="stylesheet" href="../assets/libs/apexcharts/apexcharts.css">
+    <link rel="stylesheet" href="~/assets/libs/apexcharts/apexcharts.css">
 </head>
 <body>
 
@@ -520,7 +521,7 @@
     <!-- End Switcher -->
     <!-- Loader -->
     <div id="loader">
-        <img src="../assets/images/media/loader.svg" alt="">
+        <img src="~/assets/images/media/loader.svg" alt="">
     </div>
     <!-- Loader -->
 
@@ -550,12 +551,12 @@
             <!-- Start::main-sidebar-header -->
             <div class="main-sidebar-header">
                 <a href="index.html" class="header-logo">
-                    <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
-                    <img src="../assets/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
-                    <img src="../assets/images/brand-logos/desktop-white.png" alt="logo" class="desktop-dark">
-                    <img src="../assets/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
-                    <img src="../assets/images/brand-logos/desktop-white.png" alt="logo" class="desktop-white">
-                    <img src="../assets/images/brand-logos/toggle-white.png" alt="logo" class="toggle-white">
+                    <img src="~/assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    <img src="~/assets/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                    <img src="~/assets/images/brand-logos/desktop-white.png" alt="logo" class="desktop-dark">
+                    <img src="~/assets/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                    <img src="~/assets/images/brand-logos/desktop-white.png" alt="logo" class="desktop-white">
+                    <img src="~/assets/images/brand-logos/toggle-white.png" alt="logo" class="toggle-white">
                 </a>
             </div>
             <!-- End::main-sidebar-header -->
@@ -613,7 +614,7 @@
                         <div class="action-header clearfix">
                             <div class="float-start hidden-xs d-flex ms-2">
                                 <div class="img_cont me-3">
-                                    <img src="../assets/images/faces/6.png" class="rounded-circle user_img" alt="img">
+                                    <img src="~/assets/images/faces/6.png" class="rounded-circle user_img" alt="img">
                                 </div>
                                 <div class="align-items-center mt-2">
                                     <h5 class="text-fixed-white mb-0 fw-semibold">Daneil Scott</h5>
@@ -659,7 +660,7 @@
                             </div>
                             <div class="d-flex justify-content-start">
                                 <div class="img_cont_msg">
-                                    <img src="../assets/images/faces/6.png" class="rounded-circle user_img_msg"
+                                    <img src="~/assets/images/faces/6.png" class="rounded-circle user_img_msg"
                                          alt="img">
                                 </div>
                                 <div class="msg_cotainer">
@@ -673,13 +674,13 @@
                                     <span class="msg_time_send">8:55 AM, Today</span>
                                 </div>
                                 <div class="img_cont_msg">
-                                    <img src="../assets/images/faces/9.png" class="rounded-circle user_img_msg"
+                                    <img src="~/assets/images/faces/9.png" class="rounded-circle user_img_msg"
                                          alt="img">
                                 </div>
                             </div>
                             <div class="d-flex justify-content-start">
                                 <div class="img_cont_msg">
-                                    <img src="../assets/images/faces/6.png" class="rounded-circle user_img_msg"
+                                    <img src="~/assets/images/faces/6.png" class="rounded-circle user_img_msg"
                                          alt="img">
                                 </div>
                                 <div class="msg_cotainer">
@@ -693,13 +694,13 @@
                                     <span class="msg_time_send">9:05 AM, Today</span>
                                 </div>
                                 <div class="img_cont_msg">
-                                    <img src="../assets/images/faces/9.png" class="rounded-circle user_img_msg"
+                                    <img src="~/assets/images/faces/9.png" class="rounded-circle user_img_msg"
                                          alt="img">
                                 </div>
                             </div>
                             <div class="d-flex justify-content-start">
                                 <div class="img_cont_msg">
-                                    <img src="../assets/images/faces/6.png" class="rounded-circle user_img_msg"
+                                    <img src="~/assets/images/faces/6.png" class="rounded-circle user_img_msg"
                                          alt="img">
                                 </div>
                                 <div class="msg_cotainer">
@@ -714,13 +715,13 @@
                                     <span class="msg_time_send">9:10 AM, Today</span>
                                 </div>
                                 <div class="img_cont_msg">
-                                    <img src="../assets/images/faces/9.png" class="rounded-circle user_img_msg"
+                                    <img src="~/assets/images/faces/9.png" class="rounded-circle user_img_msg"
                                          alt="img">
                                 </div>
                             </div>
                             <div class="d-flex justify-content-start">
                                 <div class="img_cont_msg">
-                                    <img src="../assets/images/faces/6.png" class="rounded-circle user_img_msg"
+                                    <img src="~/assets/images/faces/6.png" class="rounded-circle user_img_msg"
                                          alt="img">
                                 </div>
                                 <div class="msg_cotainer">
@@ -735,13 +736,13 @@
                                     <span class="msg_time_send">9:10 AM, Today</span>
                                 </div>
                                 <div class="img_cont_msg">
-                                    <img src="../assets/images/faces/9.png" class="rounded-circle user_img_msg"
+                                    <img src="~/assets/images/faces/9.png" class="rounded-circle user_img_msg"
                                          alt="img">
                                 </div>
                             </div>
                             <div class="d-flex justify-content-start">
                                 <div class="img_cont_msg">
-                                    <img src="../assets/images/faces/6.png" class="rounded-circle user_img_msg"
+                                    <img src="~/assets/images/faces/6.png" class="rounded-circle user_img_msg"
                                          alt="img">
                                 </div>
                                 <div class="msg_cotainer">
@@ -756,13 +757,13 @@
                                     <span class="msg_time_send">9:10 AM, Today</span>
                                 </div>
                                 <div class="img_cont_msg">
-                                    <img src="../assets/images/faces/9.png" class="rounded-circle user_img_msg"
+                                    <img src="~/assets/images/faces/9.png" class="rounded-circle user_img_msg"
                                          alt="img">
                                 </div>
                             </div>
                             <div class="d-flex justify-content-start">
                                 <div class="img_cont_msg">
-                                    <img src="../assets/images/faces/6.png" class="rounded-circle user_img_msg"
+                                    <img src="~/assets/images/faces/6.png" class="rounded-circle user_img_msg"
                                          alt="img">
                                 </div>
                                 <div class="msg_cotainer">
@@ -795,7 +796,7 @@
                 <div class="modal-content border-0">
                     <div class="modal-body mx-auto text-center p-5">
                         <h5>Hogo Video call</h5>
-                        <img src="../assets/images/faces/6.png" class="rounded-circle user-img-circle h-8 w-8 mt-4 mb-3"
+                        <img src="~/assets/images/faces/6.png" class="rounded-circle user-img-circle h-8 w-8 mt-4 mb-3"
                              alt="img">
                         <h4 class="mb-1 fw-semibold">Daneil Scott</h4>
                         <h6 class="loading">Calling...</h6>
@@ -832,7 +833,7 @@
                 <div class="modal-content border-0">
                     <div class="modal-body mx-auto text-center p-5">
                         <h5>Hogo Voice call</h5>
-                        <img src="../assets/images/faces/6.png" class="rounded-circle user-img-circle h-8 w-8 mt-4 mb-3"
+                        <img src="~/assets/images/faces/6.png" class="rounded-circle user-img-circle h-8 w-8 mt-4 mb-3"
                              alt="img">
                         <h4 class="mb-1 fw-semibold">Daneil Scott</h4>
                         <h6 class="loading">Calling...</h6>
@@ -1053,7 +1054,7 @@
                                 <div class="list-group-item d-flex align-items-center ">
                                     <div>
                                         <span class="avatar avatar-lg me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/13.jpg" alt="img">
+                                            <img src="~/assets/images/faces/13.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-3">
@@ -1064,7 +1065,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-lg me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/12.jpg" alt="img">
+                                            <img src="~/assets/images/faces/12.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-3">
@@ -1075,7 +1076,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-lg me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/11.jpg" alt="img">
+                                            <img src="~/assets/images/faces/11.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-3">
@@ -1086,7 +1087,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-lg me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/10.jpg" alt="img">
+                                            <img src="~/assets/images/faces/10.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-3">
@@ -1097,7 +1098,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-lg me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/19.jpg" alt="img">
+                                            <img src="~/assets/images/faces/19.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-3">
@@ -1108,7 +1109,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-lg me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/8.jpg" alt="img">
+                                            <img src="~/assets/images/faces/8.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-3">
@@ -1119,7 +1120,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-lg me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/7.jpg" alt="img">
+                                            <img src="~/assets/images/faces/7.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-3">
@@ -1134,7 +1135,7 @@
                                 <div class="list-group-item d-flex align-items-center ">
                                     <div>
                                         <span class="avatar avatar-md me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/13.jpg" alt="img">
+                                            <img src="~/assets/images/faces/13.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-2">
@@ -1152,7 +1153,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-md me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/3.jpg" alt="img">
+                                            <img src="~/assets/images/faces/3.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-2">
@@ -1170,7 +1171,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-md me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/2.jpg" alt="img">
+                                            <img src="~/assets/images/faces/2.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-2">
@@ -1188,7 +1189,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-md me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/1.jpg" alt="img">
+                                            <img src="~/assets/images/faces/1.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-2">
@@ -1206,7 +1207,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-md me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/5.jpg" alt="img">
+                                            <img src="~/assets/images/faces/5.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-2">
@@ -1224,7 +1225,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-md me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/6.jpg" alt="img">
+                                            <img src="~/assets/images/faces/6.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-2">
@@ -1241,7 +1242,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-md me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/7.jpg" alt="img">
+                                            <img src="~/assets/images/faces/7.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-2">
@@ -1259,7 +1260,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-md me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/8.jpg" alt="img">
+                                            <img src="~/assets/images/faces/8.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-2">
@@ -1276,7 +1277,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-md me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/9.jpg" alt="img">
+                                            <img src="~/assets/images/faces/9.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-2">
@@ -1294,7 +1295,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-md me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/10.jpg" alt="img">
+                                            <img src="~/assets/images/faces/10.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-2">
@@ -1311,7 +1312,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-md me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/12.jpg" alt="img">
+                                            <img src="~/assets/images/faces/12.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-2">
@@ -1329,7 +1330,7 @@
                                 <div class="list-group-item d-flex align-items-center border-top">
                                     <div>
                                         <span class="avatar avatar-md me-2 online avatar-rounded">
-                                            <img src="../assets/images/faces/14.jpg" alt="img">
+                                            <img src="~/assets/images/faces/14.jpg" alt="img">
                                         </span>
                                     </div>
                                     <div class="ms-2">
@@ -1360,14 +1361,16 @@
         <i class="ri-arrow-up-s-fill fs-20"></i>
     </div>
     <div id="responsive-overlay"></div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
     <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/assets/libs/jqueryui/jquery-ui.min.js"></script>
 
     <!-- Scroll To Top -->
     <!-- Popper JS -->
-    <script src="@Url.Content("../assets/libs/@popperjs/core/umd/popper.min.js")"></script>
+    <script src="@Url.Content("~/assets/libs/@popperjs/core/umd/popper.min.js")"></script>
 
     <!-- Defaultmenu JS -->
     <script src="~/assets/js/defaultmenu.min.js"></script>
@@ -1381,27 +1384,29 @@
     <!-- Simplebar JS -->
     <script src="~/assets/libs/simplebar/simplebar.min.js"></script>
     <script src="~/assets/js/simplebar.js"></script>
+            <!-- Choices JS -->
+    <script src="~/assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
 
     <!-- Color Picker JS -->
-    <script src="@Url.Content("../assets/libs/@simonwep/pickr/pickr.es5.min.js")"></script>
+    <script src="@Url.Content("~/assets/libs/@simonwep/pickr/pickr.es5.min.js")"></script>
 
     <!-- Date & Time Picker JS -->
     <script src="~/assets/libs/flatpickr/flatpickr.min.js"></script>
     <script src="~/assets/js/date-range.js"></script>
 
     <!-- Apex Charts JS -->
-@*     <script src="../assets/libs/apexcharts/apexcharts.min.js"></script>
-    <script src="../assets/js/index.js"></script> *@
+@*     <script src="~/assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="~/assets/js/index.js"></script> *@
 
     <!-- Custom-Switcher JS -->
     <script src="~/assets/js/custom-switcher.min.js"></script>
 
     <!-- Custom JS -->
-    @* <script src="../assets/js/custom.js"></script> *@
+    @* <script src="~/assets/js/custom.js"></script> *@
 
     <!-- Treeview JS -->
     <script src="~/assets/libs/js-treeview/treeview.min.js"></script>
-    @* <script src="../assets/js/treeview.js"></script> *@
+    @* <script src="~/assets/js/treeview.js"></script> *@
 
     <style>
         /* CSS for dropdown-element hover effect */

@@ -225,7 +225,6 @@
     <!-- Start::header-element -->
     @* <div class="header-element  dropdown-element"> *@
     <div class="header-element">
-        <!-- Start::header-link -->
         <div class="dropdown my-auto">
             <button class="btn btn-outline-light dropdown-toggle fs-14" type="button"
                     id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -236,7 +235,17 @@
                 <li><a class="dropdown-item" href="javascript:void(0);">Location</a></li>
             </ul>
         </div>
-        <!-- End::header-link -->
     </div>
-    <!-- End::header-element -->
+    <div class="header-element">
+        <div class="dropdown my-auto">
+            <button class="btn btn-outline-light dropdown-toggle fs-14" type="button"
+                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                User Manage <i class="ri-arrow-down-s-line  mg-l-3 align-bottom"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="">
+                <li><a class="dropdown-item" asp-area="IT" asp-action="Index" asp-controller="User">Manage</a></li>
+                <li><a class="dropdown-item" asp-area="IT" asp-action="Get_AccountListAsync" asp-controller="User">Get_AccountListAsync</a></li>
+            </ul>
+        </div>
+    </div>
 </div>

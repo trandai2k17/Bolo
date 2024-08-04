@@ -33,13 +33,13 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 //app.MapAreaControllerRoute(
-//        name: "Identity",
-//        areaName: "Identity",
-//        pattern: "Identity/{controller=Account}/{action=Login}"
+//        name: "IT",
+//        areaName: "IT",
+//        pattern: "IT/{controller=User}/{action=Index}"
 //    );
 
 app.MapControllerRoute(
@@ -49,4 +49,11 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapAreaControllerRoute(
+               name: "Areas",
+               areaName: "IT",
+               pattern: "{area}/{controller=Home}/{action=Index}/{id?}"
+               );
+//app.MapRazorPages();
 app.Run();

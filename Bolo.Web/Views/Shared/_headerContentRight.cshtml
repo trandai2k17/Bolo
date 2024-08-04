@@ -18,90 +18,31 @@
             </form>
         </li>
     </div> *@
-    <!-- Start::header-element -->
-    <!-- End::header-element -->
-    <!-- Start::header-element -->
+
     <div class="header-element header-theme-mode">
-        <!-- Start::header-link|layout-setting -->
         <a href="javascript:void(0);" class="header-link layout-setting">
             <span class="light-layout">
-                <!-- Start::header-link-icon -->
                 <i class="bx bx-moon  fe-moon header-link-icon"></i>
-                <!-- End::header-link-icon -->
             </span>
             <span class="dark-layout">
-                <!-- Start::header-link-icon -->
                 <i class="bx bx-sun header-link-icon"></i>
-                <!-- End::header-link-icon -->
             </span>
         </a>
-        <!-- End::header-link|layout-setting -->
     </div>
-    <!-- End::header-element -->
-    <!-- Start::header-element -->
     <div class="header-element header-fullscreen">
-        <!-- Start::header-link -->
         <a onclick="openFullscreen();" href="javascript:void(0);" class="header-link">
             <i class="bx bx-fullscreen full-screen-open header-link-icon"></i>
             <i class="bx bx-exit-fullscreen full-screen-close header-link-icon d-none"></i>
         </a>
-        <!-- End::header-link -->
     </div>
-    <!-- End::header-element -->
-    <!-- Start::header-element -->
     <div class="header-element profile-1">
-        <!-- Start::header-link|dropdown-toggle -->
-        <a href="javascript:void(0);"
-           class=" dropdown-toggle leading-none header-link d-flex justify-content-center"
-           id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-           aria-expanded="false">
-            <img src="../assets/images/faces/9.png" alt="img" width="32" height="32"
-                 class="rounded-circle">
-        </a>
-        <!-- End::header-link|dropdown-toggle -->
-        <div class="main-header-dropdown dropdown-menu dropdown-menu-end overflow-hidden profile-dropdown"
-             data-popper-placement="none">
-            <div class="main-header-profile bg-primary border-bottom p-3">
-                <div class="d-flex wd-100p">
-                    <div class="main-img-user">
-                        <img alt="" src="../assets/images/faces/9.png" class="avatar avatar-md">
-                    </div>
-                    <div class="ms-2 my-auto text-white">
-                        <h6 class="mb-0 text-fixed-white">Petey Cruiser</h6>
-                        <span class=" text-fixed-white op-7 fs-13">Premium Member</span>
-                    </div>
-                </div>
-            </div>
-            <a class="dropdown-item d-flex" href="profile.html">
-                <i class="bx bx-user-circle fs-18  me-2"></i>Profile
-            </a>
-            <a class="dropdown-item d-flex" href="editprofile.html">
-                <i class="bx bx-cog  fs-18  me-2"></i> Edit Profile
-            </a>
-            <a class="dropdown-item d-flex" href="email.html">
-                <i class="bx bxs-inbox  fs-18  me-2"></i>Inbox
-            </a>
-            <a class="dropdown-item d-flex" href="chat.html">
-                <i class="bx bx-envelope  fs-18  me-2"></i>Messages
-            </a>
-            <a class="dropdown-item d-flex" href="settings.html">
-                <i class="bx bx-slider-alt  fs-18  me-2"></i> Account Settings
-            </a>
-            <a class="dropdown-item d-flex" href="signin.html">
-                <i class="bx bx-log-out  fs-18  me-2"></i>Sign Out
-            </a>
-        </div>
+        <partial name="_profileUser"></partial>
     </div>
-    <!-- End::header-element -->
-    <!-- Start::header-element -->
     <div class="header-element">
-        <!-- Start::header-link|switcher-icon -->
         <a href="javascript:void(0);" class="header-link me-0" data-bs-toggle="offcanvas"
            data-bs-target="#switcher-canvas">
             <i class="bx bx-cog header-link-icon"></i>
         </a>
-        <!-- End::header-link|switcher-icon -->
     </div>
-    <!-- End::header-element -->
 
 </div>

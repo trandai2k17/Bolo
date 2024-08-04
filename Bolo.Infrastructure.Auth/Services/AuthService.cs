@@ -21,7 +21,7 @@ namespace Bolo.Infrastructure.Auth.Services
             _userManager = userManager;
             _roleManager = roleManager;
         }
-        public async Task<bool> SignInAsync(Account account)
+        public async Task<bool> SignInAsync(ErpUser account)
         {
             ApplicationUser user = new ApplicationUser
             {
@@ -36,7 +36,7 @@ namespace Bolo.Infrastructure.Auth.Services
         {
             await _signInManager.SignOutAsync();
         }
-        public async Task<bool> RegisterAsync(Account account)
+        public async Task<bool> RegisterAsync(ErpUser account)
         {
             ApplicationUser user = new ApplicationUser
             {
@@ -53,7 +53,7 @@ namespace Bolo.Infrastructure.Auth.Services
             return false;
         }
 
-        public async Task<Employee> FindByNameAsync(Account account)
+        public async Task<Employee> FindByNameAsync(ErpUser account)
         {
             ApplicationUser user = new ApplicationUser
             {

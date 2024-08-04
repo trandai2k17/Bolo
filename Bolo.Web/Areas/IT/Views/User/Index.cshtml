@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["View"] = "Manage";
+    ViewData["Page"] = "User";
+}
+<div class="row">
+    <div class="col-sm-12 col-lg-12 col-xl-12 col-xxl-12">
+        <div class="card">
+            <div class="card-body d-flex align-items-center py-3 flex-wrap bg-info-transparent" id="_AccountList">
+                <partial name="_AccountList" />
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script type="text/javascript">
+
+        $(function () {
+            Get_AccountListAsync();
+        });
+
+        function Get_AccountListAsync() {
+            console.log("Get_AccountListAsync___:");
+            $.ajax({
+                type: 'GET',
+                // contentType: "application/json; charset=utf-8",
+                // url: '@Url.Action("Get_AccountListAsync", "User", new { Area = "IT" })',
+                url: '../User/Get_AccountListAsync',
+                data: {},
+                success: function (response) {
+                    console.log(response);
+                    $("_AccountList").html(response);
+                },
+                failure: function (response) {
+                    console.log("failure___:", response.responseText);
+                },
+                error: function (response) {
+                    console.log("error___:", response.responseText);
+                }
+            });
+        }
+    </script>
+}

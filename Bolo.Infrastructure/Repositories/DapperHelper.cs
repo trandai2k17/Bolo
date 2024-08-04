@@ -22,10 +22,12 @@ namespace Bolo.Infrastructure.Repositories
             _connection2 = connection2;
         }
 
-        public void SetTransaction(IDbTransaction transaction1, IDbTransaction transaction2)
+        public void BeginTransaction()
         {
-            _transaction1 = transaction1;
-            _transaction2 = transaction2;
+            _connection1.Open();
+            _connection2.Open();
+            _transaction1 = _connection1.BeginTransaction();
+            _transaction2 = _connection2.BeginTransaction();
         }
 
         public void Commit()
@@ -38,6 +40,14 @@ namespace Bolo.Infrastructure.Repositories
         {
             _transaction1?.Rollback();
             _transaction2?.Rollback();
+        }
+
+        public void Dispose()
+        {
+            _transaction1?.Dispose();
+            _transaction2?.Dispose();
+            _connection1?.Dispose();
+            _connection2?.Dispose();
         }
 
         public async Task<IEnumerable<T>> QueryAsync<T>(string query, DynamicParameters? param = null, IDbConnection? connection = null)

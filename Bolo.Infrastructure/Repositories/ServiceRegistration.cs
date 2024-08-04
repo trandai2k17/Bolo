@@ -21,6 +21,7 @@ namespace Bolo.Infrastructure.Repositories
             //services.AddScoped<DapperDBContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IDapperHelper, DapperHelper>();
+            services.AddScoped<IUserRepository, UserRepository>();
             //services.AddScoped<IProductionLine, ProductionLineRepository>();
             //services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             //services.AddScoped<IAccountRepository, AccountRepository>();
